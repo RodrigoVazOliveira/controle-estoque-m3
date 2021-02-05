@@ -27,5 +27,18 @@ public class ListaProdutos {
         }
     }
 
+    public Produto getItem(String nome) {
+        for (Produto produto: lista) {
+            if (produto.getNome().equalsIgnoreCase(nome)) {
+                return produto;
+            }
+
+        }
+        return null;
+    }
+
+    public void removeItem(Produto produto) {
+        lista.remove(produto);
+    }
 
 }

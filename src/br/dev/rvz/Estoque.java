@@ -20,4 +20,18 @@ public class Estoque {
     public void pesquisarProduto(String nome) {
         lista.pesquisar(nome);
     }
+
+    public Produto getItem(String name) {
+        return lista.getItem(name);
+    }
+
+    public void removeProduto(Produto produto) {
+        lista.removeItem(produto);
+    }
+
+    public Produto altearQuantidade(Produto produto, int quantidade) {
+        produto.setQuantidadeEmEstoque(produto.getQuantidadeEmEstoque() + quantidade);
+        return produto;
+    }
+
 }

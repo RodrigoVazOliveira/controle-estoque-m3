@@ -10,7 +10,7 @@ public class MainMenu {
         estoque = new Estoque();
 
         while(run) {
-            IO.out("1. Adicionar um produto\n2. Pesquisar um produto por nome\n3. Sair do programa.");
+            IO.out("1. Adicionar um produto\n2. Pesquisar um produto por nome\n3. Adicionar quantiade do produto\n4. Diminuir quantidade do produto.\n5. Sair do programa.");
             option = IO.input().nextInt();
             menuOptions();
         }
@@ -27,6 +27,24 @@ public class MainMenu {
         estoque.pesquisarProduto(IO.input().nextLine());
     }
 
+    private void adicionarQuantidadeProduto() {
+        IO.out("Qual produto deseja aumentar a quantidade?");
+        Produto produto = estoque.getItem(IO.input().nextLine());
+        Produto aux  = produto;
+        estoque.removeProduto(aux);
+        produto = estoque.altearQuantidade(produto, 1);
+        estoque.adicionarProduto(produto.getNome(), produto.getDataVencimento(), produto.getPreco(), produto.getQuantidadeEmEstoque());
+    }
+
+    public void diminuirQuantidadeProduto() {
+        IO.out("Qual produto deseja diminuir a quantidade?");
+        Produto produto = estoque.getItem(IO.input().nextLine());
+        Produto aux  = produto;
+        estoque.removeProduto(aux);
+        produto = estoque.altearQuantidade(produto, -1);
+        estoque.adicionarProduto(produto.getNome(), produto.getDataVencimento(), produto.getPreco(), produto.getQuantidadeEmEstoque());
+    }
+
     private void sair() {
         run = false;
     }
@@ -37,6 +55,10 @@ public class MainMenu {
         } else if (option == 2) {
             pesquisarProduto();
         } else if (option == 3) {
+            adicionarQuantidadeProduto();
+        } else if (option == 4) {
+            diminuirQuantidadeProduto();
+        } else if (option == 5) {
             sair();
         } else {
             IO.out("oção inválida");
