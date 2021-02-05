@@ -11,12 +11,21 @@ public class ListaProdutos {
         lista = new ArrayList<>();
     }
 
-    public void setLista(List<Produto> lista) {
-        this.lista = lista;
+    public List<Produto> getLista() {
+        return lista;
     }
 
     public void adicionarProduto(Produto produto) {
         lista.add(produto);
     }
+
+    public void pesquisar(String nome) {
+        for (Produto produto: lista) {
+            if (produto.getNome().equalsIgnoreCase(nome)) {
+                IO.out("Produto encontrado: " + produto);
+            }
+        }
+    }
+
 
 }

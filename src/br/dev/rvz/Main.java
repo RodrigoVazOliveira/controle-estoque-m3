@@ -19,9 +19,11 @@ public class Main {
                 produto.setDataVencimento(IO.input().nextLine());
                 produto.setPreco(IO.input().nextDouble());
                 produto.setQuantidadeEmEstoque(IO.input().nextInt());
-
-
+                listaProdutos.adicionarProduto(produto);
+                IO.out("Produto adicionado!");
             } else if (option == 2) {
+                IO.out("Digite o noem do produto:");
+                String nome = IO.input().nextLine();
 
             } else if (option == 3) {
                 run = false;
