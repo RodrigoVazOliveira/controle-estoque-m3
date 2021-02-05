@@ -17,8 +17,7 @@ public class Main {
                 IO.out("Produto adicionado!");
             } else if (option == 2) {
                 IO.out("Digite o noem do produto:");
-                String nome = IO.input().nextLine();
-                listaProdutos.pesquisar(nome);
+                estoque.pesquisarProduto(IO.input().nextLine());
             } else if (option == 3) {
                 run = false;
             } else {

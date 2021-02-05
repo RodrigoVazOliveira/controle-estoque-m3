@@ -16,4 +16,8 @@ public class Estoque {
         produto.setQuantidadeEmEstoque(quantidadeEmEstoque);
         lista.adicionarProduto(produto);
     }
+
+    public void pesquisarProduto(String nome) {
+        lista.pesquisar(nome);
+    }
 }
