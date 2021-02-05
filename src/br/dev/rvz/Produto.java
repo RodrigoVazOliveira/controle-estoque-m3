@@ -48,4 +48,14 @@ public class Produto {
     public void setQuantidadeEmEstoque(int quantidadeEmEstoque) {
         this.quantidadeEmEstoque = quantidadeEmEstoque;
     }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "nome='" + nome + '\'' +
+                ", dataVencimento='" + dataVencimento + '\'' +
+                ", preco=" + preco +
+                ", quantidadeEmEstoque=" + quantidadeEmEstoque +
+                '}';
+    }
 }
