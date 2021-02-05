@@ -25,10 +25,6 @@ public class Estoque {
         return lista.getItem(name);
     }
 
-    public void removeProduto(Produto produto) {
-        lista.removeItem(produto);
-    }
-
     public Produto altearQuantidade(Produto produto, int quantidade) {
         produto.setQuantidadeEmEstoque(produto.getQuantidadeEmEstoque() + quantidade);
         return produto;

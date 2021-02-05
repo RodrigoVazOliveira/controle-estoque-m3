@@ -30,19 +30,13 @@ public class MainMenu {
     private void adicionarQuantidadeProduto() {
         IO.out("Qual produto deseja aumentar a quantidade?");
         Produto produto = estoque.getItem(IO.input().nextLine());
-        Produto aux  = produto;
-        estoque.removeProduto(aux);
         produto = estoque.altearQuantidade(produto, 1);
-        estoque.adicionarProduto(produto.getNome(), produto.getDataVencimento(), produto.getPreco(), produto.getQuantidadeEmEstoque());
     }
 
     public void diminuirQuantidadeProduto() {
         IO.out("Qual produto deseja diminuir a quantidade?");
         Produto produto = estoque.getItem(IO.input().nextLine());
-        Produto aux  = produto;
-        estoque.removeProduto(aux);
         produto = estoque.altearQuantidade(produto, -1);
-        estoque.adicionarProduto(produto.getNome(), produto.getDataVencimento(), produto.getPreco(), produto.getQuantidadeEmEstoque());
     }
 
     private void sair() {
