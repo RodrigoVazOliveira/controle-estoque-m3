@@ -15,6 +15,8 @@ public class ListaProdutos {
         this.lista = lista;
     }
 
-
+    public void adicionarProduto(Produto produto) {
+        lista.add(produto);
+    }
 
 }
