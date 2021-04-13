@@ -29,5 +29,4 @@ public class Estoque {
         produto.setQuantidadeEmEstoque(produto.getQuantidadeEmEstoque() + quantidade);
         return produto;
     }
-
 }

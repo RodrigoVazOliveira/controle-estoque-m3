@@ -8,7 +8,7 @@ public class ListaProdutos {
     private List<Produto> lista;
 
     public ListaProdutos() {
-        lista = new ArrayList<>();
+        lista = new ArrayList<Produto>();
     }
 
     public List<Produto> getLista() {
@@ -22,7 +22,7 @@ public class ListaProdutos {
     public void pesquisar(String nome) {
         for (Produto produto: lista) {
             if (produto.getNome().equalsIgnoreCase(nome)) {
-                IO.out("Produto encontrado: " + produto);
+                IO.out("Produto encontrado: " + produto.getNome());
             }
         }
     }
@@ -40,5 +40,4 @@ public class ListaProdutos {
     public void removeItem(Produto produto) {
         lista.remove(produto);
     }
-
 }
